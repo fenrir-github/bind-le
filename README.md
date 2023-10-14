@@ -14,6 +14,7 @@ docker run -d --name=bind9-le --restart=always \
   fenrir/bind9-le:12
 
 RELOAD zone: docker exec bind9-le rndc reload example.org
+
 FREEZE zone: docker exec bind9-le rndc freeze
 THAW zone: docker exec bind9-le rndc thaw
 REGISTER LE: docker exec bind9-le certbot register --non-interactive --agree-tos -m email@example.org
