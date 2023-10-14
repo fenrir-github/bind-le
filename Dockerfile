@@ -1,7 +1,7 @@
 # fenrir/bind9-le
 # bind9 + letsencrypt (certbot)
 #
-# VERSION 12.0.0
+# VERSION 12.0.1
 #
 FROM debian:bullseye-slim
 MAINTAINER Fenrir <dont@want.spam>
@@ -14,7 +14,9 @@ RUN  echo 'APT::Install-Suggests "false";' > /etc/apt/apt.conf &&\
   echo 'Aptitude::Recommends-Important "false";' >> /etc/apt/apt.conf &&\
   echo 'Aptitude::Suggests-Important "false";' >> /etc/apt/apt.conf &&\
 # Install packages
-  apt-get update && apt-get install -y -q bind9 bind9utils bind9-dnsutils certbot &&\
+  apt-get update &&\
+  apt-get dist-upgrade -y &&\
+  apt-get install -y -q bind9 bind9utils bind9-dnsutils certbot &&\
 # Cleanning
   apt-get autoclean &&\
   apt-get clean &&\
