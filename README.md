@@ -16,10 +16,18 @@ docker run -d --name=bind9-le --restart=always \
 RELOAD zone: docker exec bind9-le rndc reload example.org
 
 FREEZE zone: docker exec bind9-le rndc freeze
+
 THAW zone: docker exec bind9-le rndc thaw
+
 REGISTER LE: docker exec bind9-le certbot register --non-interactive --agree-tos -m email@example.org
+
 UN-REGISTER: docker exec bind9-le certbot unregister --non-interactive --agree-tos -m email@example.org
+
 STAGING CRT: docker exec bind9-le /certbot-staging.sh *.example.org
+
 CERTIFICATE: docker exec bind9-le /certbot.sh *.example.org
+
 READ  CRT: docker exec bind9-le openssl x509 -in /etc/letsencrypt/live/example.org/cert.pem -text -noout
+
 READ LOGS: docker exec bind9-le cat /var/log/letsencrypt/letsencrypt.log
+
