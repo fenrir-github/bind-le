@@ -16,7 +16,7 @@ RUN  echo 'APT::Install-Suggests "false";' > /etc/apt/apt.conf &&\
 # Install packages
   apt-get update &&\
   apt-get dist-upgrade -y &&\
-  apt-get install -y -q bind9 bind9utils bind9-dnsutils certbot &&\
+  apt-get install -y -q bind9 bind9utils bind9-dnsutils certbot cron &&\
 # Cleanning
   apt-get autoclean &&\
   apt-get clean &&\
