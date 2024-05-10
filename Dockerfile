@@ -1,7 +1,7 @@
 # fenrir/bind9-le
 # bind9 + letsencrypt (certbot)
 #
-# VERSION 12.0.1
+# VERSION 12.0.2
 #
 FROM debian:bullseye-slim
 MAINTAINER Fenrir <dont@want.spam>
